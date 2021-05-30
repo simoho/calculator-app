@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body[data-theme="one"] {
+  --t1-mainbackground: hsl(222, 26%, 31%);
+  --t1-toggle-keypad-background: hsl(223, 31%, 20%);
+  --t1-screen-background: hsl(224, 36%, 15%);
+  --t1-key-blue-background: hsl(225, 21%, 49%);
+  --t1-key-blue-shadow: hsl(224, 28%, 35%);
+
+  --t1-key-orange-background-toggle: hsl(6, 63%, 50%);
+  --t1-key-red-shadow: hsl(6, 70%, 34%);
+
+  --t1-key-white-background: hsl(30, 25%, 89%);
+  --t1-key-white-shadow: hsl(28, 16%, 65%);
+
+  --t1-text-blue: hsl(221, 14%, 31%);
+  --t1-text-display: white;
+  --t1-text-white: white;
+}
+
+body[data-theme="two"] {
+  --t1-mainbackground: hsl(0, 0%, 90%);
+  --t1-toggle-keypad-background: hsl(0, 5%, 81%);
+  --t1-screen-background: hsl(0, 0%, 93%);
+  --t1-key-blue-background: rgb(26, 161, 158);
+  --t1-key-blue-shadow: hsl(35, 11%, 61%);
+
+  --t1-key-orange-background-toggle: hsl(25, 98%, 40%);
+  --t1-key-red-shadow: hsl(25, 99%, 27%);
+
+
+  --t1-key-white-background: hsl(30, 25%, 89%);
+  --t1-key-white-shadow: hsl(28, 16%, 65%);
+
+  --t1-text-blue: hsl(60, 10%, 19%);
+  --t1-text-display: hsl(60, 10%, 19%);
+  --t1-text-white: hsl(60, 10%, 19%);
+
+}
+
+body[data-theme="three"] {
+  --t1-mainbackground: hsl(268, 75%, 9%);
+  --t1-toggle-keypad-background: hsl(268, 71%, 12%);
+  --t1-screen-background: hsl(268, 71%, 12%);
+  --t1-key-blue-background: hsl(268, 47%, 21%);
+  --t1-key-blue-shadow: hsl(290, 70%, 36%);
+
+  --t1-key-orange-background-toggle: hsl(176, 100%, 44%);
+  --t1-key-red-shadow: hsl(177, 92%, 70%);
+
+
+  --t1-key-white-background: hsl(281, 89%, 26%);
+  --t1-key-white-shadow: hsl(285, 91%, 52%);
+
+  --t1-text-blue: hsl(52, 100%, 62%);
+  --t1-text-display: hsl(52, 100%, 62%);
+  --t1-text-white: white;
+
+}
+
+body{
+    background-color: var(--t1-mainbackground);
+    font-family: 'Spartan', sans-serif; 
+    text-align: center;
+}
+div.container{
+    width:94vw;
+    height:100vh;
+    margin: 3em auto;
+}
+header.header, main{
+  max-width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: var(--t1-text-display);
+}
+header.header h1{
+  margin-top: 10px;
+  font-weight: 700;
+  font-size:1.9em;
+}
+header.header h2{
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 21px 10px 10px;
+  margin: 12px 0 12px auto; 
+}
+div.theme-list{
+  margin-right: 5px;
+}
+ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 10px 4px;
+}
+div.radio-btn{
+  display: flex;
+  background: var(--t1-toggle-keypad-background);
+  border-radius: 9px;
+  padding: 1px 4px 0px;
+  margin-top: -5px;
+  height: 20px;
+}
+div.radio-btn input{
+  visibility: hidden;
+}
+div.radio-btn div.btn-theme{
+  position: relative;
+  background: var(--t1-key-orange-background-toggle);
+  border-radius: 50%;
+  max-width: 14px;
+  max-height: 14px;
+  margin: 2px 2px 0px -3px;
+}
+div.theme-list ul.numeric li:hover{
+  cursor: pointer;
+}
+div.screen{
+  width: 100%;
+  background: var(--t1-screen-background);
+  border-radius: 11px;
+  margin: 8px 4px 15px 0px;
+  text-align: right;
+}
+div.screen h2{
+  color: var(--t1-text-display);
+  font-size: 2.5em;
+}
+main{
+  margin: 12px auto;
+  justify-content: space-around;
+  background: var(--t1-toggle-keypad-background);
+  border-radius: 7px;
+  padding: 6px;
+}
+main button{
+  width: 62px;
+  height: 49px;
+  margin: 8px;
+  background: var(--t1-key-white-background);
+  box-shadow:0px 1px var(--t1-key-white-shadow);
+  border: 1px solid var(--t1-key-white-shadow);
+  border-radius: 7px;
+  font-size:1.7em;
+  font-weight: 700;
+  padding: 5px;
+  color: var(--t1-text-blue);
+}
+main button.big-btn{
+  width: 140px;
+}
+main button.reset,
+main button.del{
+  background-color: var(--t1-key-blue-background);
+  box-shadow: 0px 1px var(--t1-key-blue-shadow);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid var(--t1-key-blue-shadow);
+}
+main button.equal{
+  background: var(--t1-key-orange-background-toggle);
+  box-shadow: 0px 1px var(--t1-key-red-shadow);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid  var(--t1-key-red-shadow);
+}
+
+footer.footer{
+  margin: 10px;
+  padding: 20px;
+}
+footer.footer a {
+  text-decoration: none;
+}
+
+@media only screen and ( min-width: 376px) {
+  div.container{
+    width: 50vw;
+  }
+  div.container header.header, div.container main{
+    max-width: 500px;
+  }
+
+  main button{
+    width: 82px;
+    height: 58px;
+    margin: 14px;
+  }
+
+  main button.big-btn{
+    width: 200px;
+  }
+}
+.hidden{
+  display: none;
+}
+
+body[data-theme = 'three'] .equal{
+  color: black;
+}
